@@ -11,6 +11,7 @@
         android:id="@+id/imageView2"
         android:layout_width="97dp"
         android:layout_height="99dp"
+        android:onClick="openNewTerm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_baseline_add_24" />
