@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.wgu.scheduleapp.R;
 
-public class Assesments extends AppCompatActivity {
+public class Assessments extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
