@@ -8,7 +8,7 @@
     tools:context=".UI.NewAssessment">
 
     <TextView
-        android:id="@+id/text_newAssessmen"
+        android:id="@+id/text_newAssessment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#3F51B5"
@@ -29,7 +29,7 @@
         android:text="Objective"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_newAssessmen" />
+        app:layout_constraintTop_toBottomOf="@+id/text_newAssessment" />
 
     <TextView
         android:id="@+id/textViewPerformance"
@@ -39,7 +39,7 @@
         android:text="Performance"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/switchType"
-        app:layout_constraintTop_toBottomOf="@+id/text_newAssessmen" />
+        app:layout_constraintTop_toBottomOf="@+id/text_newAssessment" />
 
     <TextView
         android:id="@+id/textViewTitle"
