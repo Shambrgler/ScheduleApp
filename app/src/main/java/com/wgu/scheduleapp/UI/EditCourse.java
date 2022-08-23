@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.wgu.scheduleapp.R;
 
-public class NewCourse extends AppCompatActivity {
+public class EditCourse extends AppCompatActivity {
 
     private DatePickerDialog datePickerDialog;
     private Button startDateButton;
@@ -22,12 +22,9 @@ public class NewCourse extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_course);
-        startDateButton = findViewById(R.id.newCourseStart);
-        endDateButton = findViewById(R.id.newCourseEnd);
-        startDate = findViewById(R.id.textCourseStart);
-        endDate = findViewById(R.id.textCourseEnd);
-
+        setContentView(R.layout.activity_edit_course);
+        startDateButton = findViewById(R.id.editCourseStart);
+        endDateButton = findViewById(R.id.editCourseEnd);
     }
 
     private void initStartDatePicker() {
@@ -59,6 +56,7 @@ public class NewCourse extends AppCompatActivity {
 
     }
 
+
     private String makeDateString(int day, int month, int year) {
         if (month == 0) { return "Jan "  + day + ", " + year; }
         if (month == 1) { return "Feb "  + day + ", " + year; }
@@ -76,19 +74,21 @@ public class NewCourse extends AppCompatActivity {
         return "Error";
     }
 
-    public void openStartDatePicker(View view) {
-        initStartDatePicker();
-        datePickerDialog.show();
+
+    public void saveDate(View view) {
+        //TODO save dates to database; currently only saves text
+        //startDate.setText(startDateButton.getText());
+        //endDate.setText(endDateButton.getText());
     }
+
 
     public void openEndDatePicker(View view) {
         initEndDatePicker();
         datePickerDialog.show();
     }
 
-    public void saveDate(View view) {
-        //TODO save dates to database; currently only saves text
-        startDate.setText(startDateButton.getText());
-        endDate.setText(endDateButton.getText());
+    public void openStartDatePicker(View view) {
+        initStartDatePicker();
+        datePickerDialog.show();
     }
 }

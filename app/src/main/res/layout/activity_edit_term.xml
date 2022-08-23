@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#3F51B5"
-        android:text="EDIT TERM"
+        android:text="VIEW/EDIT TERM"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +22,7 @@
 
     <TextView
         android:id="@+id/textTermStart"
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
@@ -34,15 +34,15 @@
 
     <TextView
         android:id="@+id/textTermEnd"
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
         android:text="End Date: "
+        android:textAlignment="textEnd"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTermStart"
-        tools:textAlignment="textEnd" />
+        app:layout_constraintTop_toBottomOf="@+id/textTermStart" />
 
     <Button
         android:id="@+id/termStartDate"
@@ -101,7 +101,7 @@
 
     <TextView
         android:id="@+id/textViewTermTitle"
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:layout_height="25dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
@@ -122,5 +122,52 @@
         android:text="Term Name"
         app:layout_constraintStart_toEndOf="@+id/textViewTermTitle"
         app:layout_constraintTop_toBottomOf="@+id/textEditTerm" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        app:layout_constraintStart_toEndOf="@+id/textAddCourse"
+        app:layout_constraintTop_toBottomOf="@+id/listEditTermCourses"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+
+    <TextView
+        android:id="@+id/textAddCourse"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Add Course: "
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listEditTermCourses" />
+
+    <TextView
+        android:id="@+id/textViewCourses"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Courses: "
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTermEnd"
+        tools:textAlignment="textEnd" />
+
+    <ListView
+        android:id="@+id/listEditTermCourses"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewCourses"
+        app:layout_constraintTop_toBottomOf="@+id/termEndDate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,9 +14,12 @@
         android:theme="@style/Theme.ScheduleApp"
         tools:targetApi="31">
         <activity
+            android:name=".EditCourse"
+            android:exported="false" />
+        <activity
             android:name=".UI.NewCourse"
             android:exported="false"
-            android:parentActivityName=".UI.Courses"/>
+            android:parentActivityName=".UI.Courses" />
         <activity
             android:name=".UI.EditTerm"
             android:exported="false" />
