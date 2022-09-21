@@ -14,6 +14,9 @@
         android:theme="@style/Theme.ScheduleApp"
         tools:targetApi="31">
         <activity
+            android:name=".EditAssessment"
+            android:exported="false" />
+        <activity
             android:name=".EditCourse"
             android:exported="false" />
         <activity

@@ -2,20 +2,16 @@ package com.wgu.scheduleapp.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.TextView;
 
 import com.wgu.scheduleapp.R;
 
-import java.util.Date;
-
-public class NewTerm extends AppCompatActivity {
+public class EditAssessment extends AppCompatActivity {
 
     private DatePickerDialog datePickerDialog;
     private Button startDateButton;
@@ -26,11 +22,12 @@ public class NewTerm extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_term);
-        startDateButton = findViewById(R.id.termStartDate);
-        endDateButton = findViewById(R.id.termEndDate);
-        startDate = findViewById(R.id.textstart);
-        endDate = findViewById(R.id.textend);
+        setContentView(R.layout.activity_edit_assessment);
+        startDateButton = findViewById(R.id.editAssessmentStart);
+        endDateButton = findViewById(R.id.editAssessmentEnd);
+        startDate = findViewById(R.id.textEditAssessmentStart);
+        endDate = findViewById(R.id.textEditAssessmentEnd);
+
     }
 
     private void initStartDatePicker() {
