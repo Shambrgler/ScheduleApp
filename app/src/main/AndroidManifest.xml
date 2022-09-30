@@ -14,10 +14,10 @@
         android:theme="@style/Theme.ScheduleApp"
         tools:targetApi="31">
         <activity
-            android:name=".EditAssessment"
+            android:name=".UI.EditAssessment"
             android:exported="false" />
         <activity
-            android:name=".EditCourse"
+            android:name=".UI.EditCourse"
             android:exported="false" />
         <activity
             android:name=".UI.NewCourse"
