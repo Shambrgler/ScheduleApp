@@ -7,6 +7,8 @@ import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.wgu.scheduleapp.R;
@@ -18,6 +20,13 @@ public class EditAssessment extends AppCompatActivity {
     private Button endDateButton;
     private TextView startDate;
     private TextView endDate;
+    private Switch switchType;
+    private EditText assessmentTitle;
+    String title;
+    String stringStartDate;
+    String stringEndDate;
+    boolean switchIsObjective;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +36,16 @@ public class EditAssessment extends AppCompatActivity {
         endDateButton = findViewById(R.id.editAssessmentEnd);
         startDate = findViewById(R.id.textEditAssessmentStart);
         endDate = findViewById(R.id.textEditAssessmentEnd);
+        switchType = findViewById(R.id.switchType);
+        assessmentTitle = findViewById(R.id.editTextAssessmentTitle);
+        title = getIntent().getStringExtra("title");
+        assessmentTitle.setText(title);
+        switchIsObjective = getIntent().getBooleanExtra("isObjective",false);
+        switchType.setChecked(switchIsObjective);
+        stringStartDate = getIntent().getStringExtra("startDate");
+        startDateButton.setText(stringStartDate);
+        stringEndDate = getIntent().getStringExtra("endDate");
+        endDateButton.setText(stringEndDate);
 
     }
 

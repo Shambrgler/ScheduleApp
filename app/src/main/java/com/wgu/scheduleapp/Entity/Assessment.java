@@ -12,14 +12,15 @@ public class Assessment {
     private String assessmentStartDate;
     private String assessmentEndDate;
     private boolean hasCourse = false;
+    private boolean isObjective;
     private String courseName;
 
-    public Assessment(int assessmentID, String assessmentTitle, String assessmentStartDate, String assessmentEndDate, String courseName) {
+    public Assessment(int assessmentID, String assessmentTitle, boolean isObjective, String assessmentStartDate, String assessmentEndDate) {
         this.assessmentID = assessmentID;
         this.assessmentTitle = assessmentTitle;
         this.assessmentStartDate = assessmentStartDate;
         this.assessmentEndDate = assessmentEndDate;
-        this.courseName = courseName;
+        this.isObjective = isObjective;
     }
 
     public int getAssessmentID() {
@@ -70,6 +71,14 @@ public class Assessment {
         this.courseName = courseName;
     }
 
+    public boolean isObjective() {
+        return isObjective;
+    }
+
+    public void setObjective(boolean objective) {
+        isObjective = objective;
+    }
+
     @Override
     public String toString() {
         return "Assessment{" +
@@ -78,6 +87,7 @@ public class Assessment {
                 ", assessmentStartDate='" + assessmentStartDate + '\'' +
                 ", assessmentEndDate='" + assessmentEndDate + '\'' +
                 ", hasCourse=" + hasCourse +
+                ", isObjective=" + isObjective +
                 ", courseName='" + courseName + '\'' +
                 '}';
     }
