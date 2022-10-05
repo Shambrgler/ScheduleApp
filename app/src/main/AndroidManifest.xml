@@ -19,14 +19,16 @@
             android:parentActivityName=".UI.Assessments"/>
         <activity
             android:name=".UI.EditCourse"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".UI.Courses"/>
         <activity
             android:name=".UI.NewCourse"
             android:exported="false"
             android:parentActivityName=".UI.Courses" />
         <activity
             android:name=".UI.EditTerm"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".UI.Terms"/>
         <activity
             android:name=".UI.NewAssessment"
             android:exported="false"

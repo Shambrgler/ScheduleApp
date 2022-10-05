@@ -13,7 +13,7 @@ import com.wgu.scheduleapp.Entity.Assessment;
 import com.wgu.scheduleapp.Entity.Course;
 import com.wgu.scheduleapp.Entity.Term;
 
-@Database(entities = {Assessment.class, Course.class, Term.class}, version = 3, exportSchema = false)
+@Database(entities = {Assessment.class, Course.class, Term.class}, version = 4, exportSchema = false)
 public abstract class ScheduleAppDatabaseBuilder extends RoomDatabase {
     public abstract AssessmentDAO assessmentDAO();
     public abstract CourseDAO courseDAO();

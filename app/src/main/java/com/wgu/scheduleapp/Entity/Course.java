@@ -1,7 +1,10 @@
 package com.wgu.scheduleapp.Entity;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+
+import java.util.List;
 
 @Entity(tableName = "courses")
 public class Course {
@@ -12,13 +15,14 @@ public class Course {
     private String courseEndDate;
     private boolean hasTerm = false;
     private String termName;
+    @Ignore
+    private List<Assessment> courseAssessments;
 
-    public Course(int courseID, String courseTitle, String courseStartDate, String courseEndDate, String termName) {
+    public Course(int courseID, String courseTitle, String courseStartDate, String courseEndDate) {
         this.courseID = courseID;
         this.courseTitle = courseTitle;
         this.courseStartDate = courseStartDate;
         this.courseEndDate = courseEndDate;
-        this.termName = termName;
     }
 
     public int getCourseID() {
@@ -67,6 +71,15 @@ public class Course {
 
     public void setTermName(String termName) {
         this.termName = termName;
+    }
+
+    public List<Assessment> getCourseAssessments() {
+        //TODO: Query assessments table for all assessments with courseID;
+        if (courseAssessments.isEmpty()) {
+            return null;
+        } else {
+            return courseAssessments;
+        }
     }
 
     @Override
