@@ -28,10 +28,10 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
                     int position = getAdapterPosition();
                     final Term current = mTerms.get(position);
                     Intent intent = new Intent(context, EditTerm.class);
-                    intent.putExtra("id", current.getTermID());
+                    intent.putExtra("id",current.getTermID());
                     intent.putExtra("title", current.getTermTitle());
-                    intent.putExtra("isObjective", current.getTermStartDate());
-                    intent.putExtra("startDate", current.getTermEndDate());
+                    intent.putExtra("endDate", current.getTermEndDate());
+                    intent.putExtra("startDate", current.getTermStartDate());
                     //TODO: Add other attributes to send to next screen
                     context.startActivity(intent);
 

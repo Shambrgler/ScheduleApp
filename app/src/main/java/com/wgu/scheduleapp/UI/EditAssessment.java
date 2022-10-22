@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.wgu.scheduleapp.Database.Repository;
 import com.wgu.scheduleapp.R;
 
 public class EditAssessment extends AppCompatActivity {
@@ -22,10 +23,12 @@ public class EditAssessment extends AppCompatActivity {
     private TextView endDate;
     private Switch switchType;
     private EditText assessmentTitle;
+    private int assessmentID;
     String title;
     String stringStartDate;
     String stringEndDate;
     boolean switchIsObjective;
+    Repository repo;
 
 
     @Override
@@ -46,6 +49,7 @@ public class EditAssessment extends AppCompatActivity {
         startDateButton.setText(stringStartDate);
         stringEndDate = getIntent().getStringExtra("endDate");
         endDateButton.setText(stringEndDate);
+        assessmentID = getIntent().getIntExtra("id",-1);
 
     }
 

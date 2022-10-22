@@ -64,7 +64,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
             String title = current.getCourseTitle();
             holder.courseItemView.setText(title);
         } else {
-            holder.courseItemView.setText("No Assessment Title");
+            holder.courseItemView.setText("No Course Title");
         }
 
     }

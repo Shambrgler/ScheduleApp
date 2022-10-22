@@ -1,151 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00BCD4"
-    tools:context=".UI.EditAssessment">
+    android:background="#00BCD4">
 
-    <TextView
-        android:id="@+id/text_editAssessment"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#3F51B5"
-        android:text="EDIT ASSESSMENT"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:textAlignment="center" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00BCD4"
+        tools:context=".UI.EditAssessment">
 
-    <Switch
-        android:id="@+id/switchType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Performance"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_editAssessment" />
+        <TextView
+            android:id="@+id/text_editAssessment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#3F51B5"
+            android:text="EDIT ASSESSMENT"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/textViewPerformance"
-        android:layout_width="136dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="16dp"
-        android:text="Objective"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/switchType"
-        app:layout_constraintTop_toBottomOf="@+id/text_editAssessment" />
+        <Switch
+            android:id="@+id/switchType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Performance"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_editAssessment" />
 
-    <TextView
-        android:id="@+id/textViewTitle"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:text="Title: "
-        android:textAlignment="textEnd"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchType" />
+        <TextView
+            android:id="@+id/textViewPerformance"
+            android:layout_width="136dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="16dp"
+            android:text="Objective"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/switchType"
+            app:layout_constraintTop_toBottomOf="@+id/text_editAssessment" />
 
-    <EditText
-        android:id="@+id/editTextAssessmentTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Assessment Title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textViewTitle"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPerformance" />
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="Title: "
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchType" />
 
-    <TextView
-        android:id="@+id/textViewAssessmentStartDate"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:text="Start Date: "
-        android:textAlignment="textEnd"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+        <EditText
+            android:id="@+id/editTextAssessmentTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Assessment Title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPerformance" />
 
-    <TextView
-        android:id="@+id/textViewAssessmentEndDate"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:text="End Date: "
-        android:textAlignment="textEnd"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAssessmentStartDate" />
+        <TextView
+            android:id="@+id/textViewAssessmentStartDate"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="36dp"
+            android:text="Start Date: "
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
 
-    <Button
-        android:id="@+id/editAssessmentStart"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:onClick="openStartDatePicker"
-        android:text="Jan 1, 2022"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textViewAssessmentStartDate"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAssessmentTitle" />
+        <TextView
+            android:id="@+id/textViewAssessmentEndDate"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="End Date: "
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAssessmentStartDate" />
 
-    <Button
-        android:id="@+id/editAssessmentEnd"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:onClick="openEndDatePicker"
-        android:text="Jan 1, 2022"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textViewAssessmentEndDate"
-        app:layout_constraintTop_toBottomOf="@+id/editAssessmentStart" />
+        <Button
+            android:id="@+id/editAssessmentStart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="openStartDatePicker"
+            android:text="Jan 1, 2022"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewAssessmentStartDate"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAssessmentTitle" />
 
-    <TextView
-        android:id="@+id/textEditAssessmentStart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/textEditAssessmentEnd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/editAssessmentEnd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="openEndDatePicker"
+            android:text="Jan 1, 2022"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewAssessmentEndDate"
+            app:layout_constraintTop_toBottomOf="@+id/editAssessmentStart" />
 
-    <TextView
-        android:id="@+id/textEditAssessmentEnd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/textEditAssessmentStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/textEditAssessmentEnd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/buttoneditAssessmentSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:onClick="saveDate"
-        android:text="Save"
-        app:layout_constraintBottom_toTopOf="@+id/textEditAssessmentStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/textEditAssessmentEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/buttoneditAssessmentSave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="saveDate"
+            android:text="Save"
+            app:layout_constraintBottom_toTopOf="@+id/textEditAssessmentStart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editAssessmentEnd" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

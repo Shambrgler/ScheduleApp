@@ -15,8 +15,7 @@ public class Assessment {
     private boolean isObjective;
     private String courseName;
 
-    public Assessment(int assessmentID, String assessmentTitle, boolean isObjective, String assessmentStartDate, String assessmentEndDate) {
-        this.assessmentID = assessmentID;
+    public Assessment(String assessmentTitle, boolean isObjective, String assessmentStartDate, String assessmentEndDate) {
         this.assessmentTitle = assessmentTitle;
         this.assessmentStartDate = assessmentStartDate;
         this.assessmentEndDate = assessmentEndDate;

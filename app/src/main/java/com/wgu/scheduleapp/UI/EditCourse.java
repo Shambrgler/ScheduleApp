@@ -7,8 +7,11 @@ import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.wgu.scheduleapp.Database.Repository;
+import com.wgu.scheduleapp.Entity.Course;
 import com.wgu.scheduleapp.R;
 
 public class EditCourse extends AppCompatActivity {
@@ -18,6 +21,12 @@ public class EditCourse extends AppCompatActivity {
     private Button endDateButton;
     private TextView startDate;
     private TextView endDate;
+    private EditText courseTitle;
+    private int courseID;
+    private String stringTitle;
+    private String stringStartDate;
+    private String stringEndDate;
+    Repository repo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +34,15 @@ public class EditCourse extends AppCompatActivity {
         setContentView(R.layout.activity_edit_course);
         startDateButton = findViewById(R.id.editCourseStart);
         endDateButton = findViewById(R.id.editCourseEnd);
+        courseTitle = findViewById(R.id.editCourseTitle);
+        courseID = getIntent().getIntExtra("id",-1);
+        stringTitle = getIntent().getStringExtra("title");
+        stringStartDate = getIntent().getStringExtra("startDate");
+        stringEndDate = getIntent().getStringExtra("endDate");
+        courseTitle.setText(stringTitle);
+        startDateButton.setText(stringStartDate);
+        endDateButton.setText(stringEndDate);
+
     }
 
     private void initStartDatePicker() {
@@ -75,10 +93,14 @@ public class EditCourse extends AppCompatActivity {
     }
 
 
-    public void saveDate(View view) {
-        //TODO save dates to database; currently only saves text
-        //startDate.setText(startDateButton.getText());
-        //endDate.setText(endDateButton.getText());
+    public void editCourseSaveButton(View view) {
+        Course course = new Course(courseTitle.getText().toString(),startDateButton.getText().toString(),endDateButton.getText().toString());
+        if (courseID == -1) {
+            repo.insertCourse(course);
+        } else {
+            course.setCourseID(courseID);
+            repo.updateCourse(course);
+        }
     }
 
 

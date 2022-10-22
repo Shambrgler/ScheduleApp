@@ -18,8 +18,7 @@ public class Course {
     @Ignore
     private List<Assessment> courseAssessments;
 
-    public Course(int courseID, String courseTitle, String courseStartDate, String courseEndDate) {
-        this.courseID = courseID;
+    public Course(String courseTitle, String courseStartDate, String courseEndDate) {
         this.courseTitle = courseTitle;
         this.courseStartDate = courseStartDate;
         this.courseEndDate = courseEndDate;

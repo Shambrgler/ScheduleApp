@@ -1,173 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00BCD4"
-    tools:context=".UI.EditTerm">
+    android:background="#00BCD4">
 
-    <TextView
-        android:id="@+id/textEditTerm"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#3F51B5"
-        android:text="VIEW/EDIT TERM"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:textAlignment="center" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00BCD4"
+        tools:context=".UI.EditTerm">
 
-    <TextView
-        android:id="@+id/textTermStart"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
-        android:text="Start Date: "
-        android:textAlignment="textEnd"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTermTitle" />
+        <TextView
+            android:id="@+id/textEditTerm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#3F51B5"
+            android:text="VIEW/EDIT TERM"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/textTermEnd"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
-        android:text="End Date: "
-        android:textAlignment="textEnd"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTermStart" />
+        <TextView
+            android:id="@+id/textTermStart"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:text="Start Date: "
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTermTitle" />
 
-    <Button
-        android:id="@+id/termStartDate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:onClick="openStartDatePicker"
-        android:text="Jan 1, 2022"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textTermStart"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTermTitle" />
+        <TextView
+            android:id="@+id/textTermEnd"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:text="End Date: "
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTermStart" />
 
-    <Button
-        android:id="@+id/termEndDate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:onClick="openEndDatePicker"
-        android:text="Jan 1, 2022"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textTermEnd"
-        app:layout_constraintTop_toBottomOf="@+id/termStartDate" />
+        <Button
+            android:id="@+id/termStartDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="openStartDatePicker"
+            android:text="Jan 1, 2022"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textTermStart"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTermTitle" />
 
-    <Button
-        android:id="@+id/buttonSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:onClick="saveDate"
-        android:text="Save"
-        app:layout_constraintBottom_toTopOf="@+id/textstart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/termEndDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="openEndDatePicker"
+            android:text="Jan 1, 2022"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textTermEnd"
+            app:layout_constraintTop_toBottomOf="@+id/termStartDate" />
 
-    <TextView
-        android:id="@+id/textstart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/textend"
-        tools:layout_editor_absoluteX="176dp" />
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="saveDate"
+            android:text="Save"
+            app:layout_constraintBottom_toTopOf="@+id/textstart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/floatingActionButton4" />
 
-    <TextView
-        android:id="@+id/textend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="176dp" />
+        <TextView
+            android:id="@+id/textstart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toTopOf="@+id/textend"
+            tools:layout_editor_absoluteX="176dp" />
 
-    <TextView
-        android:id="@+id/textViewTermTitle"
-        android:layout_width="120dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:text="Title:"
-        android:textAlignment="textEnd"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textEditTerm" />
+        <TextView
+            android:id="@+id/textend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="176dp" />
 
-    <EditText
-        android:id="@+id/editTextTermTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Term Name"
-        app:layout_constraintStart_toEndOf="@+id/textViewTermTitle"
-        app:layout_constraintTop_toBottomOf="@+id/textEditTerm" />
+        <TextView
+            android:id="@+id/textViewTermTitle"
+            android:layout_width="120dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="Title:"
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textEditTerm" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:clickable="true"
-        app:layout_constraintStart_toEndOf="@+id/textAddCourse"
-        app:layout_constraintTop_toBottomOf="@+id/listEditTermCourses"
-        app:srcCompat="@drawable/ic_baseline_add_24" />
+        <EditText
+            android:id="@+id/editTextTermTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Term Name"
+            app:layout_constraintStart_toEndOf="@+id/textViewTermTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textEditTerm" />
 
-    <TextView
-        android:id="@+id/textAddCourse"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:text="Add Course: "
-        android:textAlignment="textEnd"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listEditTermCourses" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            app:layout_constraintStart_toEndOf="@+id/textAddCourse"
+            app:layout_constraintTop_toBottomOf="@+id/listEditTermCourses"
+            app:srcCompat="@drawable/ic_baseline_add_24" />
 
-    <TextView
-        android:id="@+id/textViewCourses"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="Courses: "
-        android:textAlignment="textEnd"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTermEnd"
-        tools:textAlignment="textEnd" />
+        <TextView
+            android:id="@+id/textAddCourse"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="Add Course: "
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/listEditTermCourses" />
 
-    <ListView
-        android:id="@+id/listEditTermCourses"
-        android:layout_width="0dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textViewCourses"
-        app:layout_constraintTop_toBottomOf="@+id/termEndDate" />
+        <TextView
+            android:id="@+id/textViewCourses"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="Courses: "
+            android:textAlignment="textEnd"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTermEnd"
+            tools:textAlignment="textEnd" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ListView
+            android:id="@+id/listEditTermCourses"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewCourses"
+            app:layout_constraintTop_toBottomOf="@+id/termEndDate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

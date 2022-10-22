@@ -19,15 +19,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Repository repo = new Repository(getApplication());
-        Assessment assessment = new Assessment(1,"Test 1",true,"Jan 1st","Jan 31st");
-        repo.insertAssessment(assessment);
-        Assessment assessment2 = new Assessment(2,"Test2",false,"Feb 1st","Feb 28th");
-        repo.insertAssessment(assessment2);
-        Course course1 = new Course(1,"Test Course 1", "Jan 1st", "Jan 31st");
-        repo.insertCourse(course1);
-        System.out.println("Course Added");
-        Term term1 = new Term(1,"Test Term 1", "Jan 2nd", "Jan 32nd");
-        repo.insertTerm(term1);
+        //Assessment assessment = new Assessment("Test 1",true,"Jan 1st","Jan 31st");
+        //repo.insertAssessment(assessment);
+        //Assessment assessment2 = new Assessment("Test2",false,"Feb 1st","Feb 28th");
+        //repo.insertAssessment(assessment2);
+        //Course course1 = new Course("Test Course 1", "Jan 1st", "Jan 31nd");
+        //repo.insertCourse(course1);
+        //Term term1 = new Term("Test Term 1", "Jan 2nd", "Jan 32nd");
+        //repo.insertTerm(term1);
     }
 
     public void openTerms(View view) {

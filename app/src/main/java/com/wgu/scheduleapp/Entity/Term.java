@@ -17,8 +17,7 @@ public class Term {
     @Ignore
     private List<Course> termCourses;
 
-    public Term(int termID, String termTitle, String termStartDate, String termEndDate) {
-        this.termID = termID;
+    public Term(String termTitle, String termStartDate, String termEndDate) {
         this.termTitle = termTitle;
         this.termStartDate = termStartDate;
         this.termEndDate = termEndDate;

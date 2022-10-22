@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.wgu.scheduleapp.Database.Repository;
 import com.wgu.scheduleapp.R;
 
 public class EditTerm extends AppCompatActivity {
@@ -19,6 +21,12 @@ public class EditTerm extends AppCompatActivity {
     private Button endDateButton;
     private TextView startDate;
     private TextView endDate;
+    private EditText termTitle;
+    private int termID;
+    String stringTitle;
+    String stringStartDate;
+    String stringEndDate;
+    Repository repo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +36,15 @@ public class EditTerm extends AppCompatActivity {
         endDateButton = findViewById(R.id.termEndDate);
         startDate = findViewById(R.id.textstart);
         endDate = findViewById(R.id.textend);
+        stringTitle = getIntent().getStringExtra("title");
+        stringStartDate = getIntent().getStringExtra("startDate");
+        stringEndDate = getIntent().getStringExtra("endDate");
+        termID = getIntent().getIntExtra("id",-1);
+        termTitle = findViewById(R.id.editTextTermTitle);
+        startDateButton.setText(stringStartDate);
+        endDateButton.setText(stringEndDate);
+        termTitle.setText(stringTitle);
+
     }
 
     private void initStartDatePicker() {
