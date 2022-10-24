@@ -1,6 +1,8 @@
 package com.wgu.scheduleapp.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DatePickerDialog;
 import android.icu.util.Calendar;
@@ -11,8 +13,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.wgu.scheduleapp.Database.Repository;
+import com.wgu.scheduleapp.Entity.Assessment;
 import com.wgu.scheduleapp.Entity.Course;
 import com.wgu.scheduleapp.R;
+
+import java.util.List;
 
 public class EditCourse extends AppCompatActivity {
 
@@ -42,6 +47,14 @@ public class EditCourse extends AppCompatActivity {
         courseTitle.setText(stringTitle);
         startDateButton.setText(stringStartDate);
         endDateButton.setText(stringEndDate);
+        RecyclerView recyclerView = findViewById(R.id.editCourseRecyclerView);
+        Repository repo = new Repository(getApplication());
+        List<Course> courses = repo.getAllCourses();
+        final CourseAdapter adapter = new CourseAdapter(this);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter.setCourses(courses);
+
 
     }
 

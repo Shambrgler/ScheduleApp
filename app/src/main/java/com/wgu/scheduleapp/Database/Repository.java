@@ -20,6 +20,8 @@ public class Repository {
     private List<Assessment> mAllAssessments;
     private List<Course> mAllCourses;
     private List<Term> mAllTerms;
+    private List<Assessment> mCourseAssessments;
+    private List<Course> mTermCourses;
 
     private static int NUMBER_OF_THREADS=4;
     static final ExecutorService databaseExecutor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
@@ -120,6 +122,13 @@ public class Repository {
         }
         return mAllCourses;
     }
+
+    /*public List<Assessment> getCourseAssessments(String name) {
+        databaseExecutor.execute(()-> {
+            mCourseAssessments = mAssessmentDAO.getCourseAssessments(name);
+        });
+        return mCourseAssessments;
+    }*/
 
     public void insertTerm(Term term) {
         databaseExecutor.execute(()->{

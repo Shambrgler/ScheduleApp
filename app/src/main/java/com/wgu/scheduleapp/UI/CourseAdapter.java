@@ -74,6 +74,10 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         notifyDataSetChanged();
     }
 
+    public void setAssessments(List<Assessment> assessments) {
+
+    }
+
     @Override
     public int getItemCount() {
         if(mCourses != null) {
