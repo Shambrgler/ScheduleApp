@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.wgu.scheduleapp.Database.Repository;
@@ -19,9 +21,16 @@ public class NewCourse extends AppCompatActivity {
     private DatePickerDialog datePickerDialog;
     private Button startDateButton;
     private Button endDateButton;
-    private TextView startDate;
-    private TextView endDate;
     private EditText courseTitle;
+    private EditText instructor;
+    private EditText phone;
+    private EditText email;
+    private RadioGroup status;
+    private RadioButton inProgress;
+    private RadioButton completed;
+    private RadioButton dropped;
+    private RadioButton plan;
+    private EditText notes;
     Repository repo;
 
     @Override
@@ -30,9 +39,16 @@ public class NewCourse extends AppCompatActivity {
         setContentView(R.layout.activity_new_course);
         startDateButton = findViewById(R.id.newCourseStart);
         endDateButton = findViewById(R.id.newCourseEnd);
-        startDate = findViewById(R.id.textCourseStart);
-        endDate = findViewById(R.id.textCourseEnd);
         courseTitle = findViewById(R.id.editNewCourseTitle);
+        instructor = findViewById(R.id.newCourseInstructor);
+        phone = findViewById(R.id.newCoursePhone);
+        email = findViewById(R.id.newCourseEmail);
+        status = findViewById(R.id.newCourseRadio);
+        inProgress = findViewById(R.id.newCourseInProgress);
+        completed = findViewById(R.id.newCourseCompleted);
+        dropped = findViewById(R.id.newCourseDropped);
+        plan = findViewById(R.id.newCoursePlan);
+        notes = findViewById(R.id.newCourseNotes);
         repo = new Repository(getApplication());
 
     }
@@ -94,7 +110,9 @@ public class NewCourse extends AppCompatActivity {
     }
 
     public void newCourseSaveButton(View view) {
-        Course course = new Course(courseTitle.getText().toString(),startDateButton.getText().toString(),endDateButton.getText().toString());
+        int radio = status.getCheckedRadioButtonId();
+        System.out.println(radio);
+        Course course = new Course(courseTitle.getText().toString(),startDateButton.getText().toString(),endDateButton.getText().toString(),instructor.getText().toString(),phone.getText().toString(),email.getText().toString(),notes.getText().toString(),"In Progress");
         repo.insertCourse(course);
     }
 }
