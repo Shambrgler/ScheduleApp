@@ -99,7 +99,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:onClick="openStartDatePicker"
-        android:text="Button"
+        android:text="Jan 1st, 2022"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewAssessmentStartDate"
         app:layout_constraintTop_toBottomOf="@+id/editTextAssessmentTitle" />
@@ -112,7 +112,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:onClick="openEndDatePicker"
-        android:text="Button"
+        android:text="Jan 2nd, 2022"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textViewAssessmentEndDate"
         app:layout_constraintTop_toBottomOf="@+id/newAssessmentStart" />
@@ -139,13 +139,13 @@
 
     <Button
         android:id="@+id/buttonNewAssessmentSave"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:onClick="saveDate"
+        android:layout_marginTop="16dp"
+        android:onClick="newAssessmentSaveButton"
         android:text="Save"
-        app:layout_constraintBottom_toTopOf="@+id/textEditAssessmentStart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newAssessmentEnd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

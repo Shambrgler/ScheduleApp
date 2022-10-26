@@ -7,8 +7,11 @@ import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.wgu.scheduleapp.Database.Repository;
+import com.wgu.scheduleapp.Entity.Course;
 import com.wgu.scheduleapp.R;
 
 public class NewCourse extends AppCompatActivity {
@@ -18,6 +21,8 @@ public class NewCourse extends AppCompatActivity {
     private Button endDateButton;
     private TextView startDate;
     private TextView endDate;
+    private EditText courseTitle;
+    Repository repo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,8 @@ public class NewCourse extends AppCompatActivity {
         endDateButton = findViewById(R.id.newCourseEnd);
         startDate = findViewById(R.id.textCourseStart);
         endDate = findViewById(R.id.textCourseEnd);
+        courseTitle = findViewById(R.id.editNewCourseTitle);
+        repo = new Repository(getApplication());
 
     }
 
@@ -86,9 +93,8 @@ public class NewCourse extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    public void saveDate(View view) {
-        //TODO save dates to database; currently only saves text
-        startDate.setText(startDateButton.getText());
-        endDate.setText(endDateButton.getText());
+    public void newCourseSaveButton(View view) {
+        Course course = new Course(courseTitle.getText().toString(),startDateButton.getText().toString(),endDateButton.getText().toString());
+        repo.insertCourse(course);
     }
 }

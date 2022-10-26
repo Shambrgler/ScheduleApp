@@ -9,8 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.wgu.scheduleapp.Database.Repository;
+import com.wgu.scheduleapp.Entity.Term;
 import com.wgu.scheduleapp.R;
 
 import java.util.Date;
@@ -22,6 +25,8 @@ public class NewTerm extends AppCompatActivity {
     private Button endDateButton;
     private TextView startDate;
     private TextView endDate;
+    private EditText termTitle;
+    Repository repo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,8 @@ public class NewTerm extends AppCompatActivity {
         endDateButton = findViewById(R.id.termEndDate);
         startDate = findViewById(R.id.textstart);
         endDate = findViewById(R.id.textend);
+        termTitle = findViewById(R.id.editTextTermTitle);
+        repo = new Repository(getApplication());
     }
 
     private void initStartDatePicker() {
@@ -89,9 +96,8 @@ public class NewTerm extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    public void saveDate(View view) {
-        //TODO save dates to database; currently only saves text
-        startDate.setText(startDateButton.getText());
-        endDate.setText(endDateButton.getText());
+    public void newTermSaveButton(View view) {
+        Term term = new Term(termTitle.getText().toString(),startDateButton.getText().toString(),endDateButton.getText().toString());
+        repo.insertTerm(term);
     }
 }

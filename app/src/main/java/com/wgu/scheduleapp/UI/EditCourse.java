@@ -48,12 +48,12 @@ public class EditCourse extends AppCompatActivity {
         startDateButton.setText(stringStartDate);
         endDateButton.setText(stringEndDate);
         RecyclerView recyclerView = findViewById(R.id.editCourseRecyclerView);
-        Repository repo = new Repository(getApplication());
-        List<Course> courses = repo.getAllCourses();
-        final CourseAdapter adapter = new CourseAdapter(this);
+        repo = new Repository(getApplication());
+        List<Assessment> assessments = repo.getAllAssessments();
+        final AssessmentAdapter adapter = new AssessmentAdapter(this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter.setCourses(courses);
+        adapter.setAssessments(assessments);
 
 
     }
@@ -108,12 +108,14 @@ public class EditCourse extends AppCompatActivity {
 
     public void editCourseSaveButton(View view) {
         Course course = new Course(courseTitle.getText().toString(),startDateButton.getText().toString(),endDateButton.getText().toString());
-        if (courseID == -1) {
-            repo.insertCourse(course);
-        } else {
-            course.setCourseID(courseID);
-            repo.updateCourse(course);
-        }
+        course.setCourseID(courseID);
+        repo.updateCourse(course);
+    }
+
+    public void editCourseDeleteButton(View view) {
+        Course course = new Course(courseTitle.getText().toString(),startDateButton.getText().toString(),endDateButton.getText().toString());
+        course.setCourseID(courseID);
+        repo.deleteCourse(course);
     }
 
 

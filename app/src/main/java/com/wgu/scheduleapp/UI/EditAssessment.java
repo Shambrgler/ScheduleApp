@@ -12,6 +12,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.wgu.scheduleapp.Database.Repository;
+import com.wgu.scheduleapp.Entity.Assessment;
+import com.wgu.scheduleapp.Entity.Course;
 import com.wgu.scheduleapp.R;
 
 public class EditAssessment extends AppCompatActivity {
@@ -50,6 +52,7 @@ public class EditAssessment extends AppCompatActivity {
         stringEndDate = getIntent().getStringExtra("endDate");
         endDateButton.setText(stringEndDate);
         assessmentID = getIntent().getIntExtra("id",-1);
+        repo = new Repository(getApplication());
 
     }
 
@@ -109,9 +112,15 @@ public class EditAssessment extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    public void saveDate(View view) {
-        //TODO save dates to database; currently only saves text
-        startDate.setText(startDateButton.getText());
-        endDate.setText(endDateButton.getText());
+    public void editAssessmentSaveButton(View view) {
+        Assessment assessment = new Assessment(assessmentTitle.getText().toString(),switchIsObjective,startDateButton.getText().toString(),endDateButton.getText().toString());
+        assessment.setAssessmentID(assessmentID);
+        repo.updateAssessment(assessment);
+    }
+
+    public void editAssessmentDeleteButton(View view) {
+        Assessment assessment = new Assessment(assessmentTitle.getText().toString(),switchIsObjective,startDateButton.getText().toString(),endDateButton.getText().toString());
+        assessment.setAssessmentID(assessmentID);
+        repo.deleteAssessment(assessment);
     }
 }

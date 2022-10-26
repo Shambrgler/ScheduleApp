@@ -7,8 +7,12 @@ import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 
+import com.wgu.scheduleapp.Database.Repository;
+import com.wgu.scheduleapp.Entity.Assessment;
 import com.wgu.scheduleapp.R;
 
 public class NewAssessment extends AppCompatActivity {
@@ -18,6 +22,9 @@ public class NewAssessment extends AppCompatActivity {
     private Button endDateButton;
     private TextView startDate;
     private TextView endDate;
+    private EditText assessmentTitle;
+    private Switch switchType;
+    Repository repo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +34,9 @@ public class NewAssessment extends AppCompatActivity {
         endDateButton = findViewById(R.id.newAssessmentEnd);
         startDate = findViewById(R.id.textEditAssessmentStart);
         endDate = findViewById(R.id.textEditAssessmentEnd);
+        assessmentTitle = findViewById(R.id.editTextAssessmentTitle);
+        switchType = findViewById(R.id.switchType);
+        repo = new Repository(getApplication());
 
     }
 
@@ -86,9 +96,9 @@ public class NewAssessment extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    public void saveDate(View view) {
-        //TODO save dates to database; currently only saves text
-        startDate.setText(startDateButton.getText());
-        endDate.setText(endDateButton.getText());
+    public void newAssessmentSaveButton(View view) {
+        Assessment assessment = new Assessment(assessmentTitle.getText().toString(),switchType.isChecked(),startDateButton.getText().toString(),endDateButton.getText().toString());
+        repo.insertAssessment(assessment);
+
     }
 }

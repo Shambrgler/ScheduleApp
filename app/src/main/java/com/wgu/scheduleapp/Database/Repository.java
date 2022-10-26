@@ -90,9 +90,7 @@ public class Repository {
     }
 
     public void updateCourse(Course course) {
-        databaseExecutor.execute(()-> {
-            mCourseDAO.update(course);
-        });
+        databaseExecutor.execute(()-> mCourseDAO.update(course));
         try{
             Thread.sleep(1000);
         } catch (InterruptedException e) {

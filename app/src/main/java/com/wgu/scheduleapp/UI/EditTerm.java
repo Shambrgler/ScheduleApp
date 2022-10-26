@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.wgu.scheduleapp.Database.Repository;
+import com.wgu.scheduleapp.Entity.Term;
 import com.wgu.scheduleapp.R;
 
 public class EditTerm extends AppCompatActivity {
@@ -44,6 +45,7 @@ public class EditTerm extends AppCompatActivity {
         startDateButton.setText(stringStartDate);
         endDateButton.setText(stringEndDate);
         termTitle.setText(stringTitle);
+        repo = new Repository(getApplication());
 
     }
 
@@ -95,10 +97,16 @@ public class EditTerm extends AppCompatActivity {
     }
 
 
-    public void saveDate(View view) {
-        //TODO save dates to database; currently only saves text
-        startDate.setText(startDateButton.getText());
-        endDate.setText(endDateButton.getText());
+    public void editTermSaveButton(View view) {
+        Term term = new Term(termTitle.getText().toString(),startDateButton.getText().toString(),endDateButton.getText().toString());
+        term.setTermID(termID);
+        repo.updateTerm(term);
+    }
+
+    public void editTermDeleteButton(View view) {
+        Term term = new Term(termTitle.getText().toString(),startDateButton.getText().toString(),endDateButton.getText().toString());
+        term.setTermID(termID);
+        repo.deleteTerm(term);
     }
 
 

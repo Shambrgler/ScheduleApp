@@ -115,7 +115,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textEditCourseEnd" />
 
         <TextView
-            android:id="@+id/textAddAssesment"
+            android:id="@+id/textviewAddAssessment"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -133,12 +133,12 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:clickable="true"
-            app:layout_constraintStart_toEndOf="@+id/textAddAssesment"
+            app:layout_constraintStart_toEndOf="@+id/textviewAddAssessment"
             app:layout_constraintTop_toBottomOf="@+id/editCourseRecyclerView"
             app:srcCompat="@drawable/ic_baseline_add_24" />
 
         <Button
-            android:id="@+id/saveButton"
+            android:id="@+id/buttonEditCourseSave"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -149,14 +149,15 @@
             app:layout_constraintTop_toBottomOf="@+id/floatingActionButton5" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonEditCourseDelete"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:onClick="editCourseDeleteButton"
             android:text="Delete"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/saveButton" />
+            app:layout_constraintTop_toBottomOf="@+id/buttonEditCourseSave" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/editCourseRecyclerView"
